@@ -10,7 +10,7 @@ addons:
   sonarcloud:
     organization: "marcol480-github" # the key of the org you chose at step #3
     token:
-      secure: c509f442f9360d4298e49e12c29120d7b14cee5b # encrypted value of your token
+      secure: dfc10a8568fbd9972fd48ae3eb7fd6937ee24c7c # encrypted value of your token
 
 
 install:
