@@ -1,6 +1,6 @@
 #include "functions.h"
 #include <stdlib.h>
-#include "/Users/marcol/Dropbox/VisitSCIPIOBIO/simulations/testing/src/parameters.h"
+#include "parameters.h"
 
 #test theFunctions
 struct posforce PosA, PosB;
