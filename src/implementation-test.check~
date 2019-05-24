@@ -1,0 +1,51 @@
+#include "functions.h"
+#include <stdlib.h>
+#include "/Users/marcol/Dropbox/VisitSCIPIOBIO/simulations/testing/src/parameters.h"
+
+#test theFunctions
+struct posforce PosA, PosB;
+
+PosA.x = 0;
+PosA.y = 0;
+PosB.x = 0;
+PosB.y = 0;
+
+    fail_unless(compute_pos(3., 2., 0.0001) == 5., "output compute function should be 5");
+    fail_unless(compute_pos(8., 2., 0.0001) == 10., "output compute function should be 10");
+    //fail_unless(compute_pos(8., 3., 0.0001) == 5., "output compute function should be 11");
+    //fail_unless(compute_pos(8., 2., 0.1) == 10., "dt too small");
+    fail_unless(compute_dist(PosA, PosB) == 0., "output compute dist should be 0");
+
+int active_cells[N_CELL], active_barcodes[N_BARCODE], count_attachments[N_BARCODE];
+struct posforce PosForce_Cell[N_CELL], PosForce_Barcode[N_BARCODE];
+int count_mix, k, l;
+
+    count_mix =0;
+    for(l=0; l< N_CELL; l++) active_cells[l] = 1;
+
+    for(l=0; l< N_BARCODE; l++){
+
+         active_barcodes[l] = 0;
+         count_attachments[l] = 0;
+
+        }
+
+    for (k=0; k< N_CELL; k++) {
+
+                PosForce_Cell[k].x = 0.0;
+                PosForce_Cell[k].y = 0.0 ;
+
+            }
+
+        for (k=0; k< N_BARCODE; k++) {
+
+            PosForce_Barcode[k].x = 0.0 ;
+            PosForce_Barcode[k].y = 30.0 ;
+
+            }
+
+            int aa ;
+            for(aa=0;aa<10;aa++){
+            fail_unless( control_cell_barcode_dist(count_mix, &active_cells[0], &active_barcodes[0], &count_attachments[0], &PosForce_Cell[0], &PosForce_Barcode[0], N_CELL, N_BARCODE, R_CELL, R_BARCODE) == aa,
+            "output compute function should be 0 not %d\n", aa );
+            }

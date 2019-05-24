@@ -1,0 +1,5 @@
+sum2ints-test: functions.c implementation-test.c
+	gcc -Wall -o ../bin/functions-test functions.c implementation-test.c -lcheck
+
+
+

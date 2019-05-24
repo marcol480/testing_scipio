@@ -1,0 +1,12 @@
+%%%% To compile the main:
+make
+
+%%%% To compile the test file:
+make -f Makefile_test
+
+%%%% Run the awk script: 
+checkmk implementation-test.check >implementation-test.c
+
+%%%% Reference
+https://stackoverflow.com/questions/14176180/is-there-a-more-basic-tutorial-for-the-c-unit-testing-framework-check
+
