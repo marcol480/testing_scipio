@@ -15,7 +15,8 @@ addons:
 
 install:
   - brew install check 
-
+  - brew install gsl
+  
 script:
   - checkmk src/implementation-test.check > src/implementation-test.c
   - make -C src -f Makefile_test
