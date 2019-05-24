@@ -49,4 +49,4 @@ int count_mix, k, l;
             fail_unless( control_cell_barcode_dist(count_mix, &active_cells[0], &active_barcodes[0], &count_attachments[0], &PosForce_Cell[0], &PosForce_Barcode[0], N_CELL, N_BARCODE, R_CELL, R_BARCODE) == aa,
             "output compute function should be 0 not %d\n", aa );
             }
-BB
+
