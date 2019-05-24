@@ -1,0 +1,27 @@
+language: c
+
+os:
+  - osx
+
+compiler:
+  gcc
+
+addons:
+  sonarcloud:
+    organization: "marcol480-github" # the key of the org you chose at step #3
+    token:
+      secure: c509f442f9360d4298e49e12c29120d7b14cee5b # encrypted value of your token
+
+
+install:
+  - brew install check 
+
+script:
+  - checkmk src/implementation-test.check > src/implementation-test.c
+  - make -C src -f Makefile_test
+  - chmod +x bin/functions-test
+  - sonar-scanner
+
+after_script:
+- ./bin/functions-test
+
