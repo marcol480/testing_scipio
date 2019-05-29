@@ -8,7 +8,7 @@
 #line 1 "implementation-test.check"
 #include "functions.h"
 #include <stdlib.h>
-#include "/Users/marcol/Dropbox/VisitSCIPIOBIO/simulations/testing/src/parameters.h"
+#include "parameters.h"
 
 START_TEST(theFunctions)
 {
@@ -76,5 +76,7 @@ int main(void)
     nf = srunner_ntests_failed(sr);
     srunner_free(sr);
 
+    printf("ritorno %d\n", nf);                                                                    
     return nf == 0 ? 0 : 1;
 }
+

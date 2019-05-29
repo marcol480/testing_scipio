@@ -16,6 +16,7 @@ int main(){ // ---  MAIN
     struct posforce PosForce_Cell[N_CELL], PosForce_Barcode[N_BARCODE];
 
     FILE  *xt, *xt_b, *out ;
+    char  file_namext[350], file_namext_b[350], file_name[350];
 
     int a, i, k, l;
     int counter;
@@ -26,7 +27,6 @@ int main(){ // ---  MAIN
     double deltax, deltay;
     double sedim_cell, sedim_barcode;
 
-    char  file_namext[350], file_namext_b[350], file_name[350];
 
 
     /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
